@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .title {
+        width: 50px;
+        margin: 0 auto;
+        color: rgb(47, 40, 40);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script>
+      const cards = [
+        {
+          title: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati atque enim repudiandae inventore vero quos nihil facere iste in saepe autem natus amet modi temporibus dolorum quia nostrum, vitae molestiae?",
+          img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fimage&psig=AOvVaw3l-HjjIYF4D-b0gMD8rSM6&ust=1695187709306000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCDzLz4tYEDFQAAAAAdAAAAABAD",
+        },
+        {
+          title: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati atque enim repudiandae inventore vero quos nihil facere iste in saepe autem natus amet modi temporibus dolorum quia nostrum, vitae molestiae?",
+          img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fimage&psig=AOvVaw3l-HjjIYF4D-b0gMD8rSM6&ust=1695187709306000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCDzLz4tYEDFQAAAAAdAAAAABAD",
+        },
+        {
+          title: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati atque enim repudiandae inventore vero quos nihil facere iste in saepe autem natus amet modi temporibus dolorum quia nostrum, vitae molestiae?",
+          img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fimage&psig=AOvVaw3l-HjjIYF4D-b0gMD8rSM6&ust=1695187709306000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCDzLz4tYEDFQAAAAAdAAAAABAD",
+        },
+      ];
+
+      const boxes = cards.map(({ title, description, img }, idx) =>
+        React.createElement(
+          "div",
+          {
+            className: "box",
+            key: idx,
+          },
+          React.createElement("img", { src: img }),
+          React.createElement("h2", {}, title),
+          React.createElement("p", {}, description)
+        )
+      );
+
+      const wrappers = React.createElement(
+        "div",
+        { className: "wrapper" },
+        boxes
+      );
+      const root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(wrappers);
+    </script>
+  </body>
+</html>
